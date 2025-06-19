@@ -1,5 +1,5 @@
 from typing import List, Dict
-from datetime import datetime
+
 
 def filter_by_state(data: List[Dict], state: str = "EXECUTED") -> List[Dict]:
     """
@@ -15,6 +15,7 @@ def filter_by_state(data: List[Dict], state: str = "EXECUTED") -> List[Dict]:
             filtered.append(item)
     return filtered
 
+
 def sort_by_date(data: List[Dict], reverse: bool = True) -> List[Dict]:
     """
     Сортирует список операций по дате.
@@ -23,4 +24,5 @@ def sort_by_date(data: List[Dict], reverse: bool = True) -> List[Dict]:
     :param reverse: True — сортировка от новых к старым, False — от старых к новым
     :return: Новый отсортированный список
     """
-    return sorted(data, key=lambda item: datetime.fromisoformat(item["date"]), reverse=reverse)
+
+    return sorted(data, key=lambda item: item["date"], reverse=reverse)
